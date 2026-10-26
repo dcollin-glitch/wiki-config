@@ -1,0 +1,196 @@
+/* Titres */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap');
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.md-typeset h2 {
+  font-weight: 600;
+  border-bottom: 1px solid var(--md-accent-fg-color--transparent);
+  padding-bottom: 0.3em;
+}
+
+/* Barre du haut avec une ombre légère */
+.md-header {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Blocs de code et encadrés arrondis */
+.md-typeset pre > code,
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 10px;
+}
+.md-typeset .admonition,
+.md-typeset details {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Tableaux */
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Cartes de la page d'accueil */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 12px;
+  border: 1px solid var(--md-accent-fg-color--transparent);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-3px);
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Barre de recherche */
+.md-search__form {
+  border-radius: 10px;
+}
+
+/* Barre de défilement discrète */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #4a4f66; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--md-accent-fg-color); }
+
+.md-grid {
+  max-width: 100%;
+}
+
+/* Menu de gauche encadré */
+.md-sidebar--primary .md-nav--primary {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.6rem 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fines barres entre les éléments du menu */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Barre sous le titre "Mon Wiki" */
+.md-sidebar--primary .md-nav--primary > .md-nav__title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Un peu d'air autour de chaque lien */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding: 0.35rem 0.4rem;
+  margin-top: 0;
+}
+
+/* Fine barre verticale entre le menu et le contenu */
+@media screen and (min-width: 76.25em) {
+  .md-content {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 0.6rem;
+  }
+}
+
+/* Police des titres : Orbitron */
+.md-typeset h1,
+.md-typeset h2,
+.md-header__title {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.5px;
+}
+/* Groupes du menu et boutons */
+.md-nav--primary .md-nav__item--section > .md-nav > .md-nav__list {
+  min-height: 1.8rem;
+}
+.wiki-custom {
+  position: relative;
+}
+.wiki-del {
+  position: absolute;
+  right: 0.4rem;
+  top: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  opacity: 0.45;
+  cursor: pointer;
+}
+.wiki-del:hover {
+  opacity: 1;
+  color: var(--md-accent-fg-color);
+}
+.wiki-tools {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+.wiki-tools button {
+  flex: 1;
+  font: inherit;
+  font-size: 0.62rem;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+.wiki-tools button:hover {
+  border-color: var(--md-accent-fg-color);
+}
+
+/* Renommer un groupe */
+.md-nav--primary .md-nav__item--section > label.md-nav__link {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.wiki-edit {
+  width: 85%;
+  font: inherit;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 6px;
+  padding: 0.1rem 0.35rem;
+  outline: none;
+}
+
+/* Barre de recherche centrée dans l'en-tête */
+@media screen and (min-width: 60em) {
+  .md-header__inner {
+    position: relative;
+  }
+  .md-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .md-search__inner {
+    width: 22rem;
+  }
+}
+
+/* Croix pour vider la recherche */
+.md-search__input:valid ~ .md-search__options {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+.md-search__options button[type="reset"] {
+  display: inline-flex !important;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.md-search__options button[type="reset"]:hover {
+  opacity: 1;
+  color: var(--md-accent-fg-color);
+}
+
+/* Laisser la place à la croix à droite du texte */
+.md-search__input {
+  padding-right: 3rem;
+}

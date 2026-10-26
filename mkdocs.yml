@@ -1,0 +1,56 @@
+site_name: Mon Wiki
+theme:
+  name: material
+  language: fr
+  font:
+    text: Inter
+    code: JetBrains Mono
+    icon:
+    logo: material/console
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js
+  - javascripts/menu-sort.js
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
